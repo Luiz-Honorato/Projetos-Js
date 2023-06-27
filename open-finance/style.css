@@ -79,6 +79,14 @@ header {
 .card h2 {
     margin-top: 15px;
 }
+
+#entrada {
+    color: #0bf580;
+}
+
+#saida {
+    color: red;
+}
 .svg-one {
     color: #34F794;
     width: 20px;
@@ -166,7 +174,7 @@ tbody td:empty {
 #form button {
     width: 250px;
     height: 30px;
-    background-color: #8E17EF;
+    background-color: #6D18F0;
     color: #fff;
     border-style: none;
     border-radius: 5px;
@@ -178,3 +186,26 @@ tbody td:empty {
     border: 2px solid black;
     scale: 1.04;
 }
+
+
+select {
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #6D18F0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    border-radius: 15px;
+    border-style: none;
+}
+
+option:hover {
+    cursor: pointer;
+    height: 50px;
+    padding: 10px;
+    border-bottom: #949191;
+    padding: 5px;
+}
+

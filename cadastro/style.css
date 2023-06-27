@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#content {
+    width: 90%;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box input{
+    width: 300px;
+    height: 20px;
+    margin: 5px;
+    box-shadow: none;
+    outline: none;
+    padding: 0 10px;
+}
+
