@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#msg {
+    height: 35px;
+    width: 280px;
+    color: #3a3939;
+    display: none;
+
+}
