@@ -8,6 +8,30 @@ class User {
     }
 }
 
+class Bd {
+    constructor() {
+        let id = localStorage.getItem('id');
+        
+        if(id === null) {
+            localStorage.setItem('id', 0);
+        }
+    }
+
+    getNextId() {
+        let nextId = localStorage.getItem('id');
+        
+        return parseInt(nextId) + 1;
+    }
+
+    saveData(user) {
+        let id = this.getNextId();
+        
+        localStorage.setItem(id, JSON.stringify(user));
+        localStorage.setItem('id', id);
+    }
+
+}
+
 class Imc {
 
     constructor() {
@@ -16,11 +40,10 @@ class Imc {
         this.ageImput = document.getElementById('age');
         this.heightImput = document.getElementById('height');
         this.weightImput = document.getElementById('weight');
-        this.users = [];
-        this.btn.addEventListener("click", () => this.validateForm());
+        this.btn.addEventListener("click", () => this.sendFormorm());
     }
 
-    validateForm() {
+    sendForm() {
         const name = this.nameImput.value;
         const age = this.ageImput.value;
         const height = this.heightImput.value;
@@ -29,15 +52,15 @@ class Imc {
         if (name && age && height && weight) {
             const imc = this.imcCalculation(weight, height)
             const user = new User(name, age, height, weight, imc)
-            const sucesso = `Enviado com sucesso.`
+            const sucesso = `Dados enviado com sucesso.`
 
-            this.users.push(user);
+            BD.saveData(user);
             this.msgSendinData(sucesso, "#4eeb5a47")
             this.cleanForm();
         } else {
-            const fail = `Faltam dados.`;
+            const msgFailed = `Todos os dados são obrigatórios.`;
 
-            this.msgSendinData(fail, "#ff00004f");
+            this.msgSendinData(msgFailed, "#ff00004f");
             console.log("Não existe nome")
         }
     }
@@ -77,8 +100,9 @@ class Imc {
         }, 3000)
     }
 
-}
 
+}
+const BD = new Bd();
 new Imc()
 
 
