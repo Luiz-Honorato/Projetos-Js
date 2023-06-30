@@ -2,3 +2,31 @@
     margin: 0;
     padding: 0;
 }
+
+#containerIndex {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 600px;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    margin-top: 2px;
+    padding: 10px;
+    border-top: 1px solid #311313;
+    border-bottom: 1px solid #311313;
+}
